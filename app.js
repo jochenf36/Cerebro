@@ -23,17 +23,23 @@ var app = module.exports = express();
 // all environments
 app.set('port', process.env.PORT || 3000);
 app.set('views', __dirname + '/views');
-app.set('view engine', 'jade');
+
+// we use a client side template engine instead of jade
+app.engine('html', require('ejs').renderFile);
+app.set('view engine', 'html');
+
 app.use(morgan('dev'));
 app.use(bodyParser());
 app.use(methodOverride());
 app.use(express.static(path.join(__dirname, 'public')));
 
+
+
 var env = process.env.NODE_ENV || 'development';
 
 // development only
 if (env === 'development') {
-  app.use(express.errorHandler());
+//  app.use(express.errorHandler());
 }
 
 // production only

@@ -1,26 +1,31 @@
-'use strict';
-
 // Declare app level module which depends on filters, and services
 
-angular.module('myApp', [
-  'myApp.controllers',
-  'myApp.filters',
-  'myApp.services',
-  'myApp.directives'
-]).
-config(function ($routeProvider, $locationProvider) {
-  $routeProvider.
-    when('/view1', {
-      templateUrl: 'partials/partial1',
-      controller: 'MyCtrl1'
-    }).
-    when('/view2', {
-      templateUrl: 'partials/partial2',
-      controller: 'MyCtrl2'
-    }).
-    otherwise({
-      redirectTo: '/view1'
-    });
+var app = angular.module('cerebro', ['ngRoute']);
 
-  $locationProvider.html5Mode(true);
+app.config(function($routeProvider, $locationProvider) {
+  $routeProvider.
+  when('/', {
+    templateUrl: 'templates/home.html',
+    controller: 'mainController'
+  }).
+  when('/about', {
+    templateUrl: 'templates/about.html',
+    controller: 'aboutController'
+  });
+
+  // FIXME: make this work without getting the error in the console
+  // $locationProvider.html5Mode(true);
+
+});
+
+app.controller("mainController",function($scope) {
+  $scope.message = "This is the default message";
+});
+
+app.controller("aboutController",function($scope) {
+  $scope.message = "This is the about message";
+});
+
+app.controller("contactController",function($scope) {
+  $scope.message = "This is the contact message";
 });

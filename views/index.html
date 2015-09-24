@@ -1,0 +1,35 @@
+<html ng-app="cerebro">
+<head>
+  <!-- Vendor javscript imports -->
+  <script src="https://code.angularjs.org/1.4.2/angular.js"></script>
+  <script src="https://code.angularjs.org/1.4.2/angular-route.js"></script>
+  <script src="/js/lib/angular-foundation/mm-foundation-tpls.min.js" charset="utf-8"></script>
+  <!-- Vendor css imports-->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
+  <!-- Private javscript imports -->
+  <!-- <script src="/js/controllers/controller.js" charset="utf-8"></script> -->
+  <script src="/js/app.js" charset="utf-8"></script>
+</head>
+
+<body>
+  <!-- angular templating -->
+  <!-- this is where content will be injected -->
+  <!-- <div ng-view></div> -->
+  <div class="inner">
+
+    <h3>Views Menu</h3>
+
+    <ul>
+      <li><a href="#/">Index</a></li>
+      <li><a href="#/about">about</a></li>
+    </ul>
+
+    <div ng-view></div>
+
+  </div>
+
+
+
+</body>
+
+</html>
