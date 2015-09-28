@@ -1,35 +1,71 @@
 <html ng-app="cerebro">
+
 <head>
-  <!-- Vendor javscript imports -->
-  <script src="https://code.angularjs.org/1.4.2/angular.js"></script>
-  <script src="https://code.angularjs.org/1.4.2/angular-route.js"></script>
-  <script src="/js/lib/angular-foundation/mm-foundation-tpls.min.js" charset="utf-8"></script>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <meta content="utf-8" http-equiv="encoding">
   <!-- Vendor css imports-->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/5.5.2/css/foundation.min.css">
-  <!-- Private javscript imports -->
-  <!-- <script src="/js/controllers/controller.js" charset="utf-8"></script> -->
-  <script src="/js/app.js" charset="utf-8"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/nvd3/1.8.1/nv.d3.min.css">
+  <!-- Private css imports -->
+  <link rel="stylesheet" type="text/css" href="/assets/css/app.css">
+  <link rel="stylesheet" type="text/css" href="/assets/css/header.css">
+  <link rel="stylesheet" href="assets/bower_components/epoch/epoch.min.css" />
+
+
 </head>
 
+<header ng-include="'assets/templates/header.html'" >
+</header>
+
 <body>
-  <!-- angular templating -->
-  <!-- this is where content will be injected -->
-  <!-- <div ng-view></div> -->
-  <div class="inner">
 
-    <h3>Views Menu</h3>
-
-    <ul>
-      <li><a href="#/">Index</a></li>
-      <li><a href="#/about">about</a></li>
-    </ul>
-
-    <div ng-view></div>
-
+  <!-- Sidebar -->
+  <div class="row fullWidth">
+    <div class="medium-1 large-1 columns sidebar">
+      <ul class="side-nav">
+        <li><a ui-sref="home">Home</a></li>
+        <li>
+          <ul style="list-style-type:none">
+            <li><a ui-sref="histogram">Histogram</a></li>
+            <li><a ui-sref="worldmap">Worldmap</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="medium-1 large-1 columns">
+    </div>
+    <div class="medium-10 large-10 columns mainContent">
+      <!-- start dynamic content -->
+      <div ui-view=""></div>
+      <!-- end dynamic content -->
+    </div>
   </div>
 
-
-
 </body>
+
+<!-- Vendor javscript imports -->
+<script scr="https://cdnjs.cloudflare.com/ajax/libs/systemjs/0.18.4/system.js"></script>
+<script src="assets/bower_components/jquery/dist/jquery.min.js"></script>
+<script src="assets/bower_components/angular/angular.min.js"></script>
+<script src="https://code.angularjs.org/1.4.2/angular-route.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+<script src="assets/bower_components/d3/d3.js"></script>
+<script src="assets/bower_components/nvd3/build/nv.d3.js"></script> <!-- or use another assembly -->
+<script src="assets/bower_components/angular-nvd3/dist/angular-nvd3.js"></script>
+<script src="assets/bower_components/epoch/epoch.min.js"></script>
+<script src="assets/bower_components/ng-epoch/ng-epoch.js"></script>
+
+<!-- Private javscript imports -->
+<script src="assets/js/lib/angular-foundation/mm-foundation-tpls.min.js" charset="utf-8"></script>
+
+
+<script src="app/app.module.js"></script>
+<script src="app/app.routes.js"></script>
+
+<script src="app/components/home/homeController.js"></script>
+<script src="app/components/home/homeFactory.js"></script>
+<script src="app/components/histogram/histogramController.js"></script>
+<script src="app/components/worldmap/worldmapController.js"></script>
+<script src="app/components/charts/piechart1/piechart1Controller.js"></script>
 
 </html>

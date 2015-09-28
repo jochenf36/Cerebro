@@ -1,0 +1,86 @@
+/* app css stylesheet */
+.menu {
+  list-style: none;
+  border-bottom: 0.1em solid black;
+  margin-bottom: 2em;
+  padding: 0 0 0.5em;
+}
+.menu:before {
+  content: "[";
+}
+.menu:after {
+  content: "]";
+}
+.menu > li {
+  display: inline;
+}
+.menu > li:before {
+  content: "|";
+  padding-right: 0.3em;
+}
+.menu > li:nth-child(1):before {
+  content: "";
+  padding: 0;
+}
+
+.containterTitle{
+  padding-bottom: 5%;
+}
+
+.chartItem{
+  height: 50%;
+  margin-bottom: 10%;
+}
+
+.chartLayer{
+  height: 10px;
+}
+
+.fullWidth {
+   width: 90%;
+   margin-left: auto;
+   margin-right: auto;
+   max-width: initial;
+}
+
+.dashboardLayer{
+  padding-bottom: 2%;
+}
+
+.chartHeader{
+}
+
+.chartHeaderTitle{
+  color: white;
+  background-color: rgb(239, 165, 90);
+  text-align:center;
+  height:50px;
+  padding-top: 10px;
+  color: white;
+  font-weight:600;
+}
+
+.chartcontent{
+  background-color: #649ACA;
+  margin-top: -10;
+  text-align: center;
+  height: 180px;
+  margin-bottom: 10%;
+}
+
+.mainText{
+  color: white;
+  font-weight: 100;
+  padding-top: 15%;
+  font-size: 50px;
+}
+
+.historicalBarChart{
+  height: 300px;
+}
+
+.mainContent{
+}
+
+.sidebar{
+}
